@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'Poppins-SemiBold';
+    src: url('/skins/page/fonts/Poppins-SemiBold.ttf');
+  }
+  
+  @font-face {
+    font-family: 'Poppins-Medium';
+    src: url('/skins/page/fonts/Poppins-Medium.ttf');
+  }
+  
+  @font-face {
+    font-family: 'Poppins-Light';
+    src: url('/skins/page/fonts/Poppins-Light.ttf');
+  }
+  
+  @font-face {
+    font-family: 'Poppins-ExtraLight';
+    src: url('/skins/page/fonts/Poppins-ExtraLight.ttf');
+  }
+  
+  @font-face {
+    font-family: 'Poppins-Bold';
+    src: url('/skins/page/fonts/Poppins-Bold.ttf');
+  }
+  
+  @font-face {
+    font-family: 'Mongoose-Light';
+    src: url('/skins/page/fonts/Mongoose-Light.otf');
+  }
+  
+  @font-face {
+    font-family: 'Mongoose-Black_0';
+    src: url('/skins/page/fonts/Mongoose-Black_0.otf');
+  }
+  
+  @font-face {
+    font-family: '7days';
+    src: url('/skins/page/fonts/7days.ttf');
+  }
+  
