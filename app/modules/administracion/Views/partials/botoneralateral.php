@@ -38,6 +38,12 @@
     Administrar Contáctanos
   </a>
 </li>
+<li <?php if ($this->botonpanel == 8) { ?>class="activo" <?php } ?>>
+  <a href="/administracion/conocenos">
+    <i class="fas fa-file-invoice"></i> 
+    Administrar Conócenos
+  </a>
+</li>
   <?php if (Session::getInstance()->get('kt_login_level') == '1') { ?>
     <li <?php if ($this->botonpanel == 4) { ?>class="activo" <?php } ?>>
       <a href="/administracion/usuario">

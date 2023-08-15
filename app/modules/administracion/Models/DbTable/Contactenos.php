@@ -22,7 +22,9 @@ class Administracion_Model_DbTable_Contactenos extends Db_Table
 	 * @return integer      identificador del  registro que se inserto
 	 */
 	public function insert($data){
+		$contactenos_padre = $data['contactenos_padre'];
 		$contactenos_titulo = $data['contactenos_titulo'];
+
 		$contactenos_color_txt = $data['contactenos_color_txt'];
 		$contactenos_color_fondo = $data['contactenos_color_fondo'];
 		$contactenos_color_bandera = $data['contactenos_color_bandera'];
@@ -42,14 +44,14 @@ class Administracion_Model_DbTable_Contactenos extends Db_Table
 		$contactenos_color_escribenos = $data['contactenos_color_escribenos'];
 		$contactenos_descripcion = $data['contactenos_descripcion'];
 		$contactenos_btn1_color = $data['contactenos_btn1_color'];
-		$contactenos_btn1_img = $data['contactenos_btn1_img'];
+		$contactenos_interna_img = $data['contactenos_interna_img'];
 		$contactenos_btn1_link = $data['contactenos_btn1_link'];
 		$contactenos_btn2_color = $data['contactenos_btn2_color'];
 		$contactenos_btn2_img = $data['contactenos_btn2_img'];
-		$contactenos_btn2_link = $data['contactenos_btn2_link'];
+		$contactenos_titulo_interno = $data['contactenos_titulo_interno'];
 		$contactenos_btn3_color = $data['contactenos_btn3_color'];
 		$contactenos_btn3_img = $data['contactenos_btn3_img'];
-		$contactenos_btn3_link = $data['contactenos_btn3_link'];
+		$contactenos_descripcion2 = $data['contactenos_descripcion2'];
 		$contactenos_btn4_color = $data['contactenos_btn4_color'];
 		$contactenos_btn4_img = $data['contactenos_btn4_img'];
 		$contactenos_btn4_link = $data['contactenos_btn4_link'];
@@ -61,7 +63,11 @@ class Administracion_Model_DbTable_Contactenos extends Db_Table
 		$contactenos_btn6_color = $data['contactenos_btn6_color'];
 		$contactenos_btn6_img = $data['contactenos_btn6_img'];
 		$contactenos_btn6_txt = $data['contactenos_btn6_txt'];
-		$query = "INSERT INTO contactenos( contactenos_titulo, contactenos_color_txt, contactenos_color_fondo, contactenos_color_bandera, contactenos_cuadro_color, contactenos_cuadro_img_fondo, contactenos_cuadro_img, contactenos_img_fendy, contactenos_titulo_boton, contactenos_boton_color, contactenos_boton_color_fondo, contactenos_logo, contactenos_logo2, contactenos_color_bandera2, contactenos_color_fondo_1, contactenos_color_fondo_2, contactenos_escribenos, contactenos_color_escribenos, contactenos_descripcion, contactenos_btn1_color, contactenos_btn1_img, contactenos_btn1_link, contactenos_btn2_color, contactenos_btn2_img, contactenos_btn2_link, contactenos_btn3_color, contactenos_btn3_img, contactenos_btn3_link, contactenos_btn4_color, contactenos_btn4_img, contactenos_btn4_link, contactenos_btn4_txt, contactenos_btn5_color, contactenos_btn5_img, contactenos_btn5_link, contactenos_btn5_txt, contactenos_btn6_color, contactenos_btn6_img, contactenos_btn6_txt) VALUES ( '$contactenos_titulo', '$contactenos_color_txt', '$contactenos_color_fondo', '$contactenos_color_bandera', '$contactenos_cuadro_color', '$contactenos_cuadro_img_fondo', '$contactenos_cuadro_img', '$contactenos_img_fendy', '$contactenos_titulo_boton', '$contactenos_boton_color', '$contactenos_boton_color_fondo', '$contactenos_logo', '$contactenos_logo2', '$contactenos_color_bandera2', '$contactenos_color_fondo_1', '$contactenos_color_fondo_2', '$contactenos_escribenos', '$contactenos_color_escribenos', '$contactenos_descripcion', '$contactenos_btn1_color', '$contactenos_btn1_img', '$contactenos_btn1_link', '$contactenos_btn2_color', '$contactenos_btn2_img', '$contactenos_btn2_link', '$contactenos_btn3_color', '$contactenos_btn3_img', '$contactenos_btn3_link', '$contactenos_btn4_color', '$contactenos_btn4_img', '$contactenos_btn4_link', '$contactenos_btn4_txt', '$contactenos_btn5_color', '$contactenos_btn5_img', '$contactenos_btn5_link', '$contactenos_btn5_txt', '$contactenos_btn6_color', '$contactenos_btn6_img', '$contactenos_btn6_txt')";
+		$tipo = $data['tipo'];
+		$contactenos_cargo = $data['contactenos_cargo'];
+
+
+		$query = "INSERT INTO contactenos( contactenos_padre, contactenos_titulo, contactenos_color_txt, contactenos_color_fondo, contactenos_color_bandera, contactenos_cuadro_color, contactenos_cuadro_img_fondo, contactenos_cuadro_img, contactenos_img_fendy, contactenos_titulo_boton, contactenos_boton_color, contactenos_boton_color_fondo, contactenos_logo, contactenos_logo2, contactenos_color_bandera2, contactenos_color_fondo_1, contactenos_color_fondo_2, contactenos_escribenos, contactenos_color_escribenos, contactenos_descripcion, contactenos_btn1_color, contactenos_interna_img, contactenos_btn1_link, contactenos_btn2_color, contactenos_btn2_img, contactenos_titulo_interno, contactenos_btn3_color, contactenos_btn3_img, contactenos_descripcion2, contactenos_btn4_color, contactenos_btn4_img, contactenos_btn4_link, contactenos_btn4_txt, contactenos_btn5_color, contactenos_btn5_img, contactenos_btn5_link, contactenos_btn5_txt, contactenos_btn6_color, contactenos_btn6_img, contactenos_btn6_txt, tipo, contactenos_cargo) VALUES ( '$contactenos_padre','$contactenos_titulo', '$contactenos_color_txt', '$contactenos_color_fondo', '$contactenos_color_bandera', '$contactenos_cuadro_color', '$contactenos_cuadro_img_fondo', '$contactenos_cuadro_img', '$contactenos_img_fendy', '$contactenos_titulo_boton', '$contactenos_boton_color', '$contactenos_boton_color_fondo', '$contactenos_logo', '$contactenos_logo2', '$contactenos_color_bandera2', '$contactenos_color_fondo_1', '$contactenos_color_fondo_2', '$contactenos_escribenos', '$contactenos_color_escribenos', '$contactenos_descripcion', '$contactenos_btn1_color', '$contactenos_interna_img', '$contactenos_btn1_link', '$contactenos_btn2_color', '$contactenos_btn2_img', '$contactenos_titulo_interno', '$contactenos_btn3_color', '$contactenos_btn3_img', '$contactenos_descripcion2', '$contactenos_btn4_color', '$contactenos_btn4_img', '$contactenos_btn4_link', '$contactenos_btn4_txt', '$contactenos_btn5_color', '$contactenos_btn5_img', '$contactenos_btn5_link', '$contactenos_btn5_txt', '$contactenos_btn6_color', '$contactenos_btn6_img', '$contactenos_btn6_txt', '$tipo', '$contactenos_cargo')";
 		$res = $this->_conn->query($query);
         return mysqli_insert_id($this->_conn->getConnection());
 	}
@@ -73,7 +79,7 @@ class Administracion_Model_DbTable_Contactenos extends Db_Table
 	 * @return void
 	 */
 	public function update($data,$id){
-		
+		$contactenos_padre = $data['contactenos_padre'];
 		$contactenos_titulo = $data['contactenos_titulo'];
 		$contactenos_color_txt = $data['contactenos_color_txt'];
 		$contactenos_color_fondo = $data['contactenos_color_fondo'];
@@ -94,14 +100,14 @@ class Administracion_Model_DbTable_Contactenos extends Db_Table
 		$contactenos_color_escribenos = $data['contactenos_color_escribenos'];
 		$contactenos_descripcion = $data['contactenos_descripcion'];
 		$contactenos_btn1_color = $data['contactenos_btn1_color'];
-		$contactenos_btn1_img = $data['contactenos_btn1_img'];
+		$contactenos_interna_img = $data['contactenos_interna_img'];
 		$contactenos_btn1_link = $data['contactenos_btn1_link'];
 		$contactenos_btn2_color = $data['contactenos_btn2_color'];
 		$contactenos_btn2_img = $data['contactenos_btn2_img'];
-		$contactenos_btn2_link = $data['contactenos_btn2_link'];
+		$contactenos_titulo_interno = $data['contactenos_titulo_interno'];
 		$contactenos_btn3_color = $data['contactenos_btn3_color'];
 		$contactenos_btn3_img = $data['contactenos_btn3_img'];
-		$contactenos_btn3_link = $data['contactenos_btn3_link'];
+		$contactenos_descripcion2 = $data['contactenos_descripcion2'];
 		$contactenos_btn4_color = $data['contactenos_btn4_color'];
 		$contactenos_btn4_img = $data['contactenos_btn4_img'];
 		$contactenos_btn4_link = $data['contactenos_btn4_link'];
@@ -113,7 +119,11 @@ class Administracion_Model_DbTable_Contactenos extends Db_Table
 		$contactenos_btn6_color = $data['contactenos_btn6_color'];
 		$contactenos_btn6_img = $data['contactenos_btn6_img'];
 		$contactenos_btn6_txt = $data['contactenos_btn6_txt'];
-		$query = "UPDATE contactenos SET  contactenos_titulo = '$contactenos_titulo', contactenos_color_txt = '$contactenos_color_txt', contactenos_color_fondo = '$contactenos_color_fondo', contactenos_color_bandera = '$contactenos_color_bandera', contactenos_cuadro_color = '$contactenos_cuadro_color', contactenos_cuadro_img_fondo = '$contactenos_cuadro_img_fondo', contactenos_cuadro_img = '$contactenos_cuadro_img', contactenos_img_fendy = '$contactenos_img_fendy', contactenos_titulo_boton = '$contactenos_titulo_boton', contactenos_boton_color = '$contactenos_boton_color', contactenos_boton_color_fondo = '$contactenos_boton_color_fondo', contactenos_logo = '$contactenos_logo', contactenos_logo2 = '$contactenos_logo2', contactenos_color_bandera2 = '$contactenos_color_bandera2', contactenos_color_fondo_1 = '$contactenos_color_fondo_1', contactenos_color_fondo_2 = '$contactenos_color_fondo_2', contactenos_escribenos = '$contactenos_escribenos', contactenos_color_escribenos = '$contactenos_color_escribenos', contactenos_descripcion = '$contactenos_descripcion', contactenos_btn1_color = '$contactenos_btn1_color', contactenos_btn1_img = '$contactenos_btn1_img', contactenos_btn1_link = '$contactenos_btn1_link', contactenos_btn2_color = '$contactenos_btn2_color', contactenos_btn2_img = '$contactenos_btn2_img', contactenos_btn2_link = '$contactenos_btn2_link', contactenos_btn3_color = '$contactenos_btn3_color', contactenos_btn3_img = '$contactenos_btn3_img', contactenos_btn3_link = '$contactenos_btn3_link', contactenos_btn4_color = '$contactenos_btn4_color', contactenos_btn4_img = '$contactenos_btn4_img', contactenos_btn4_link = '$contactenos_btn4_link', contactenos_btn4_txt = '$contactenos_btn4_txt', contactenos_btn5_color = '$contactenos_btn5_color', contactenos_btn5_img = '$contactenos_btn5_img', contactenos_btn5_link = '$contactenos_btn5_link', contactenos_btn5_txt = '$contactenos_btn5_txt', contactenos_btn6_color = '$contactenos_btn6_color', contactenos_btn6_img = '$contactenos_btn6_img', contactenos_btn6_txt = '$contactenos_btn6_txt' WHERE contactenos_id = '".$id."'";
+		$contactenos_cargo = $data['contactenos_cargo'];
+
+		$tipo = $data['tipo'];
+
+		$query = "UPDATE contactenos SET  contactenos_padre = '$contactenos_padre', contactenos_titulo = '$contactenos_titulo', contactenos_color_txt = '$contactenos_color_txt', contactenos_color_fondo = '$contactenos_color_fondo', contactenos_color_bandera = '$contactenos_color_bandera', contactenos_cuadro_color = '$contactenos_cuadro_color', contactenos_cuadro_img_fondo = '$contactenos_cuadro_img_fondo', contactenos_cuadro_img = '$contactenos_cuadro_img', contactenos_img_fendy = '$contactenos_img_fendy', contactenos_titulo_boton = '$contactenos_titulo_boton', contactenos_boton_color = '$contactenos_boton_color', contactenos_boton_color_fondo = '$contactenos_boton_color_fondo', contactenos_logo = '$contactenos_logo', contactenos_logo2 = '$contactenos_logo2', contactenos_color_bandera2 = '$contactenos_color_bandera2', contactenos_color_fondo_1 = '$contactenos_color_fondo_1', contactenos_color_fondo_2 = '$contactenos_color_fondo_2', contactenos_escribenos = '$contactenos_escribenos', contactenos_color_escribenos = '$contactenos_color_escribenos', contactenos_descripcion = '$contactenos_descripcion', contactenos_btn1_color = '$contactenos_btn1_color', contactenos_interna_img = '$contactenos_interna_img', contactenos_btn1_link = '$contactenos_btn1_link', contactenos_btn2_color = '$contactenos_btn2_color', contactenos_btn2_img = '$contactenos_btn2_img', contactenos_titulo_interno = '$contactenos_titulo_interno', contactenos_btn3_color = '$contactenos_btn3_color', contactenos_btn3_img = '$contactenos_btn3_img', contactenos_descripcion2 = '$contactenos_descripcion2', contactenos_btn4_color = '$contactenos_btn4_color', contactenos_btn4_img = '$contactenos_btn4_img', contactenos_btn4_link = '$contactenos_btn4_link', contactenos_btn4_txt = '$contactenos_btn4_txt', contactenos_btn5_color = '$contactenos_btn5_color', contactenos_btn5_img = '$contactenos_btn5_img', contactenos_btn5_link = '$contactenos_btn5_link', contactenos_btn5_txt = '$contactenos_btn5_txt', contactenos_btn6_color = '$contactenos_btn6_color', contactenos_btn6_img = '$contactenos_btn6_img', contactenos_btn6_txt = '$contactenos_btn6_txt', tipo = '$tipo', contactenos_cargo = '$contactenos_cargo' WHERE contactenos_id = '".$id."'";
 		$res = $this->_conn->query($query);
 	}
 }

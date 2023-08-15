@@ -9,10 +9,10 @@ $(document).ready(function () {
     toolbar: 'undo redo | blocks | fontfamily ' +
       'bold italic backcolor | alignleft aligncenter ' +
       'alignright alignjustify | bullist numlist outdent indent | ' +
-      'removeformat | Upload Flmngr ImgPen | code | help ',
+      'removeformat | Upload Flmngr ImgPen | code | help   | Temaoscuro | Temaclaro',
 
 
-      font_family_formats: 'Arial=arial,helvetica,sans-serif; Courier New=courier new,courier,monospace; AkrutiKndPadmini=Akpdmi-n; Poppins-SemiBold=Poppins-SemiBold; Poppins-Medium=Poppins-Medium; Poppins-Light=Poppins-Light; Poppins-ExtraLight=Poppins-ExtraLight; Poppins-Bold=Poppins-Bold; Mongoose-Light=Mongoose-Light; Mongoose-Black_0=Mongoose-Black_0; 7days=7days; Times New Roman=times new roman,times,serif; Georgia=georgia,times new roman,times,serif; Verdana=verdana,geneva,sans-serif',
+    font_family_formats: 'Arial=arial,helvetica,sans-serif; Courier New=courier new,courier,monospace; AkrutiKndPadmini=Akpdmi-n; Poppins-SemiBold=Poppins-SemiBold; Poppins-Medium=Poppins-Medium; Poppins-Light=Poppins-Light; Poppins-ExtraLight=Poppins-ExtraLight; Poppins-Bold=Poppins-Bold; Mongoose-Light=Mongoose-Light; Mongoose-Black_0=Mongoose-Black_0; 7days=7days; Times New Roman=times new roman,times,serif; Georgia=georgia,times new roman,times,serif; Verdana=verdana,geneva,sans-serif',
 
 
     Flmngr: {
@@ -26,8 +26,26 @@ $(document).ready(function () {
     a_configuration_option: 400,
     browser_spellcheck: true,
     contextmenu: false,
-    skin: 'oxide-dark',
+    skin: 'tinymce-5-dark',
     content_css: '/skins/administracion/css/fuentes.css',
+    setup: function (editor) {
+      editor.ui.registry.addButton('Temaoscuro', {
+        text: 'Tema oscuro',
+        onAction: function (_) {
+          let tinymceback = document.getElementById('contactenos_descripcion_ifr')
+          tinymceback.style.background = "rgb(51, 51, 51)"
+        }
+      });
+ 
+      editor.ui.registry.addButton('Temaclaro', {
+        text: 'Tema claro',
+        onAction: function (_) {
+          let tinymceback = document.getElementById('contactenos_descripcion_ifr')
+          tinymceback.style.background = "rgb(255, 255, 255)"
+
+        }
+      });
+    }
   });
   $('.deletePolDoc').on('click', function () {
     let id = $(this).attr('data-id');
@@ -211,6 +229,11 @@ $(document).ready(function () {
     var route = $("#order-route").val();
     var csrf = $("#csrf").val();
     if (route != "") {
+      console.log(content1);
+      console.log(content2);
+      console.log(csrf);
+
+
       $.post(route, {
         'csrf': csrf,
         'id1': content1,
@@ -247,7 +270,7 @@ $(document).ready(function () {
   });
   let text = document.getElementById('contenido_tipo').value;
 
-  function aparecercolumna() {
+  function aparecercolumna () {
     let id_columna = document.getElementById('contenido_tipo').value;
     if (id_columna == '5' || id_columna == '6') {
       $(".no-colum").attr("style", "display:block!important")
@@ -320,7 +343,7 @@ $(document).ready(function () {
   });
 });
 
-function aparecercolumna() {
+function aparecercolumna () {
   let id_columna = document.getElementById('contenido_tipo').value;
   if (id_columna == '5' || id_columna == '6') {
     $(".no-colum").attr("style", "display:block!important")
@@ -333,7 +356,7 @@ function aparecercolumna() {
 }
 aparecercolumna();
 
-function eliminarImagen(campo, ruta) {
+function eliminarImagen (campo, ruta) {
   var csrf = $("#csrf").val();
   var csrf_section = $("#csrf_section").val();
   var id = $("#id").val();
@@ -353,7 +376,7 @@ function eliminarImagen(campo, ruta) {
   return false;
 }
 
-function eliminararchivo(campo, ruta) {
+function eliminararchivo (campo, ruta) {
   var csrf = $("#csrf").val();
   var csrf_section = $("#csrf_section").val();
   var id = $("#id").val();

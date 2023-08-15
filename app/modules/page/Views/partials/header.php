@@ -17,7 +17,7 @@
                     <a class="nav-link" href="#" style="color:<?php echo $this->partials->partials_color_texto_header?>">Servicios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color:<?php echo $this->partials->partials_color_texto_header?>">Conócenos</a>
+                    <a class="nav-link" href="/page/conocenos" style="color:<?php echo $this->partials->partials_color_texto_header?>">Conócenos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/page/contacto" style="color:<?php echo $this->partials->partials_color_texto_header?>">Contáctanos</a>

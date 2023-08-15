@@ -12,6 +12,9 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css">
   <!-- Slick CSS -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 <!--   <link rel="stylesheet" href="/components/slick/slick.css">
   <link rel="stylesheet" href="/components/slick/slick-theme.css"> -->
   <!-- Global CSS -->
@@ -47,6 +50,12 @@
 
   <!-- Main Js -->
   <script src="/skins/page/js/main.js?v=2"></script>
+   <!-- Agrega los estilos de Fancybox -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <!-- Agrega la librería de Fancybox -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
 
   <!-- Recaptcha -->
   <script src='https://www.google.com/recaptcha/api.js'></script>
