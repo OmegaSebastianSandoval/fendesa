@@ -174,12 +174,7 @@
              INICIO OPCIONES DEL LADO IZQUIERDO, ESTAN FIJAS
               ------------------ -->
             <div class="col-12 col-md-4 d-flex p-0 gap-2 align-items-end flex-column">
-                <img src="/skins/page/images/3blanco.png" class="img_menu mb-3" alt="">
-
-                <a href="https://api.whatsapp.com/send?phone=<?php echo ($this->infopage->info_pagina_whatsapp) ?>" target="_blank" class="list_links_info" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Escríbenos"><img src="/skins/page/images/whats.png" class="" alt=""></a>
-                <a href="https://www.psepagos.co/PSEHostingUI/ShowTicketOffice.aspx?ID=7100" class="list_links_info" target="_blank" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Continuar pago"><img src="/skins/page/images/pse.png" class="" alt=""></a>
-
-
+             <?php include(APP_PATH. "modules/page/Views/partials/btnlateral.php")?>
             </div>
             <!-- --------------------
              FIN OPCIONES DEL LADO IZQUIERDO
@@ -191,7 +186,7 @@
         <!-- --------------------
         INICIO SECCION 3, DONDE ESTÁ CASI TODO EL CONTENIDO
         ------------------ -->
-        <section class=" row sec3" style="background:<?php echo $this->primerRuleta->ruleta_color_fondo3 ?>">
+        <section class=" row sec3 px-3" style="background:<?php echo $this->primerRuleta->ruleta_color_fondo3 ?>">
             <!-- --------------------
       INICIO BANDERA DE LA IZQUIERDA
         ------------------ -->

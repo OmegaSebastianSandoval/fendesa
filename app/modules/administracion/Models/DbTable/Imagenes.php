@@ -27,7 +27,9 @@ class Administracion_Model_DbTable_Imagenes extends Db_Table
 		$imagen_fecha = $data['imagen_fecha'];
 		$imagen_estado = $data['imagen_estado'];
 		$imagen_album = $data['imagen_album'];
-		$query = "INSERT INTO imagenes_galeria( imagen_nombre, imagen_imagen, imagen_fecha, imagen_estado, imagen_album) VALUES ( '$imagen_nombre', '$imagen_imagen', '$imagen_fecha', '$imagen_estado', '$imagen_album')";
+		$imagen_descripcion = $data['imagen_descripcion'];
+
+		$query = "INSERT INTO imagenes_galeria( imagen_nombre, imagen_imagen, imagen_fecha, imagen_estado, imagen_album,imagen_descripcion ) VALUES ( '$imagen_nombre', '$imagen_imagen', '$imagen_fecha', '$imagen_estado', '$imagen_album', '$imagen_descripcion')";
 		$res = $this->_conn->query($query);
         return mysqli_insert_id($this->_conn->getConnection());
 	}
@@ -45,7 +47,9 @@ class Administracion_Model_DbTable_Imagenes extends Db_Table
 		$imagen_fecha = $data['imagen_fecha'];
 		$imagen_estado = $data['imagen_estado'];
 		$imagen_album = $data['imagen_album'];
-		$query = "UPDATE imagenes_galeria SET  imagen_nombre = '$imagen_nombre', imagen_imagen = '$imagen_imagen', imagen_fecha = '$imagen_fecha', imagen_estado = '$imagen_estado', imagen_album = '$imagen_album' WHERE imagen_id = '".$id."'";
+		$imagen_descripcion = $data['imagen_descripcion'];
+
+		$query = "UPDATE imagenes_galeria SET  imagen_nombre = '$imagen_nombre', imagen_imagen = '$imagen_imagen', imagen_fecha = '$imagen_fecha', imagen_estado = '$imagen_estado', imagen_album = '$imagen_album', imagen_descripcion = '$imagen_descripcion' WHERE imagen_id = '".$id."'";
 		$res = $this->_conn->query($query);
 	}
 }

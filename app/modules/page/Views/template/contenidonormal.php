@@ -1,6 +1,7 @@
 <div class="text mt-5" style="">
 	<?php echo $this->primerRegistro->contactenos_descripcion2; ?>
 </div>
+<?php if (count($this->imagenes) >= 1 || $this->primerRegistro->contactenos_interna_img) { ?>
 
 <div class="row mt-5">
 
@@ -49,6 +50,8 @@
 			</div>
 		<?php } ?>
 </div>
+<?php } ?>
+
 
 <!-- -------------
             FIN IMAGEN 

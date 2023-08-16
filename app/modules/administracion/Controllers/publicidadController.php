@@ -308,6 +308,8 @@ class Administracion_publicidadController extends Administracion_mainController
     $array['100'] = 'Botones Flotantes';
     $array['101'] = 'PopUp';
     $array['102'] = 'Botones Contáctanos';
+    $array['103'] = 'Botones Inicio';
+
 
 
     // HOME

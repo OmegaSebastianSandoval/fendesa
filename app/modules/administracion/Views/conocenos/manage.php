@@ -6,7 +6,14 @@
 		<div class="content-dashboard">
 			<input type="hidden" name="csrf" id="csrf" value="<?php echo $this->csrf ?>">
 			<input type="hidden" name="contactenos_padre" id="contactenos_padre" value="<?php echo $this->padre ?>">
-			<input type="hidden" name="tipo" id="tipo" value="<?php echo $this->tipo ?>">
+			<?php if ($this->tipo) { ?>
+				<input type="hidden" name="tipo" id="tipo" value="<?php if ($this->tipo) {
+																		echo $this->tipo;
+																	} else {
+																		echo $this->content->tipo;
+																	} ?>">
+
+			<?php } ?>
 
 			<input type="hidden" name="csrf_section" id="csrf_section" value="<?php echo $this->csrf_section ?>">
 			<?php if ($this->content->contactenos_id) { ?>
@@ -35,7 +42,7 @@
 					</div>
 
 					<div class="col-3 form-group">
-						<label for="contactenos_color_fondo" class="control-label">Color fondo</label>
+						<label for="contactenos_color_fondo" class="control-label">Color fondo,título de la sección, fondo del ícono principal y fondo del botón activo</label>
 						<label class="input-group">
 
 							<input type="text" value="<?= $this->content->contactenos_color_fondo; ?>" name="contactenos_color_fondo" id="contactenos_color_fondo" class="form-control form-control-color">
@@ -156,12 +163,23 @@
 
 						<div class="col-6 form-group mb-2">
 							<label for="tipo">Seleccione el tipo</label>
-							<select class="form-control" name="tipo" id="tipo" required>
+							<select class="form-control" onchange="ocutarCampos();" name="tipo" id="tipo" required>
 								<option value="">Seleccione...</option>
-								<option value="1" <?php  if($this->content->tipo == '1'
-								){ echo "selected";}?> >Contenido </option>
-								<option value="2" <?php  if($this->content->tipo == '2'
-								){ echo "selected";}?> >Slider imagen </option>Slider contenido </option>
+								<option value="1" <?php if (
+														$this->content->tipo == '1'
+													) {
+														echo "selected";
+													} ?>>Contenido </option>
+								<option value="2" <?php if (
+														$this->content->tipo == '2'
+													) {
+														echo "selected";
+													} ?>>Slider Nosotros </option>
+								<option value="4" <?php if (
+														$this->content->tipo == '4'
+													) {
+														echo "selected";
+													} ?>>Galería</option>
 
 
 							</select>
@@ -196,15 +214,18 @@
 						</label>
 						<div class="help-block with-errors"></div>
 					</div>
-					<div class="col-4 form-group">
-						<label for="contactenos_cargo" class="control-label">Cargo</label>
-						<label class="input-group">
+					<?php if ($this->padre && $this->tipo == 3) { ?>
 
-							<input type="text" value="<?= $this->content->contactenos_cargo; ?>" name="contactenos_cargo" id="contactenos_cargo" class="form-control" >
-						</label>
-						<div class="help-block with-errors"></div>
-					</div>
-					<div class="col-4 form-group">
+						<div class="col-4 form-group">
+							<label for="contactenos_cargo" class="control-label">Cargo</label>
+							<label class="input-group">
+
+								<input type="text" value="<?= $this->content->contactenos_cargo; ?>" name="contactenos_cargo" id="contactenos_cargo" class="form-control">
+							</label>
+							<div class="help-block with-errors"></div>
+						</div>
+					<?php } ?>
+					<div class="col-4 form-group div-img-interna">
 						<label for="contactenos_interna_img">Imagen interna del contenido</label>
 						<input type="file" name="contactenos_interna_img" id="contactenos_interna_img" class="form-control  file-image" data-buttonName="btn-primary" accept="image/gif, image/jpg, image/jpeg, image/png">
 						<div class="help-block with-errors"></div>
@@ -228,7 +249,7 @@
 						<div class="help-block with-errors"></div>
 					</div>
 					<div class="col-4 form-group">
-						<label for="contactenos_color_fondo_1" class="control-label">Color fondo izquierda y borde de las cajas de texto </label>
+						<label for="contactenos_color_fondo_1" class="control-label">Color fondo izquierda, botones de la parte izquierda y nombre en la sección nuestro equipo </label>
 						<label class="input-group">
 
 							<input type="text" value="<?= $this->content->contactenos_color_fondo_1; ?>" name="contactenos_color_fondo_1" id="contactenos_color_fondo_1" class="form-control form-control-color">
@@ -467,7 +488,7 @@
 			<?php if ($this->padre) { ?>
 
 
-				<div class="row">
+				<div class="row div-descrip-princ">
 					<p class="fs-2 text-muted fw-bold">Descripción principal</p>
 
 					<div class="col-12 form-group">
@@ -506,6 +527,27 @@
 </style>
 
 <script>
+	ocutarCampos()
+	function ocutarCampos() {
+		let tipo = document.getElementById('tipo').value;
+		let imgIntera = document.querySelector('.div-img-interna');
+		let descripInt = document.querySelector('.div-descrip-princ');
+
+		console.log(tipo);
+		if (tipo == '1') {
+			imgIntera.style.display = 'block';
+			descripInt.style.display = 'block';
+		} else if (tipo == '2') {
+			imgIntera.style.display = 'none';
+			descripInt.style.display = 'none';
+		} else if (tipo == '4') {
+			imgIntera.style.display = 'none';
+			descripInt.style.display = 'none';
+
+
+		}
+
+	}
 	const colorInputs = document.querySelectorAll('.form-control-color');
 	colorInputs.forEach((input) => {
 		const colorPicker = document.createElement('div');

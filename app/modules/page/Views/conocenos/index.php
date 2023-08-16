@@ -61,10 +61,7 @@
      ***************************************
     -->
       <div class="col-12 col-md-2 d-flex gap-2 align-items-end flex-column">
-        <img src="/skins/page/images/3blanco.png" class="img_menu mb-3" alt="">
-
-        <a href="https://api.whatsapp.com/send?phone=<?php echo ($this->infopage->info_pagina_whatsapp) ?>" target="_blank" class="list_links_contacto" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Escríbenos"><img src="/skins/page/images/whats.png" class="" alt=""></a>
-        <a href="https://www.psepagos.co/PSEHostingUI/ShowTicketOffice.aspx?ID=7100" class="list_links_contacto" target="_blank" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Continuar pago"><img src="/skins/page/images/pse.png" class="" alt=""></a>
+      <?php include(APP_PATH. "modules/page/Views/partials/btnlateral.php")?>
 
 
       </div>
@@ -290,9 +287,11 @@
         <section class="section-2" style="background: <?php echo $this->contactanos->contactenos_color_fondo_2; ?>;">
 
           <!--***************************************
-    TITULO FORMULARIO
+    TITULO CONTNEIDO
      *************************************** -->
           <h2 style="color: <?php echo $this->contactanos->contactenos_color_fondo; ?>;"><?php echo $this->primerRegistro->contactenos_titulo_interno; ?></h2>
+
+
 
           <?php if ($this->primerRegistro->tipo == 1) { ?>
             
@@ -300,6 +299,9 @@
           <?php } else if ($this->primerRegistro->tipo == 2 ) { ?>
             
             <?php include("../app/modules/page/Views/template/contenidoslider.php"); ?>
+          <?php } else if ($this->primerRegistro->tipo == 4 ) { ?>
+            
+            <?php include("../app/modules/page/Views/template/galeria.php"); ?>
           <?php } ?>
          
         </section>
@@ -367,6 +369,7 @@
 
           return rez;
         },
+   
       },
     });
   });

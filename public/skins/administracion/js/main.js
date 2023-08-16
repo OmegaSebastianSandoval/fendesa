@@ -32,7 +32,7 @@ $(document).ready(function () {
       editor.ui.registry.addButton('Temaoscuro', {
         text: 'Tema oscuro',
         onAction: function (_) {
-          let tinymceback = document.getElementById('contactenos_descripcion_ifr')
+          let tinymceback = document.querySelector('.tox-edit-area__iframe')
           tinymceback.style.background = "rgb(51, 51, 51)"
         }
       });
@@ -40,7 +40,7 @@ $(document).ready(function () {
       editor.ui.registry.addButton('Temaclaro', {
         text: 'Tema claro',
         onAction: function (_) {
-          let tinymceback = document.getElementById('contactenos_descripcion_ifr')
+          let tinymceback = document.querySelector('.tox-edit-area__iframe')
           tinymceback.style.background = "rgb(255, 255, 255)"
 
         }

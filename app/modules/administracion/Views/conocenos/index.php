@@ -92,8 +92,8 @@
 						<td>T&iacute;tulo</td>
 						<?php if ($this->padre) { ?>
 
-						 <td width="100">Orden</td>
-						 <?php } ?>
+							<td width="100">Orden</td>
+						<?php } ?>
 
 						<td></td>
 					</tr>
@@ -130,6 +130,10 @@
 										<?php if ($content->tipo == 2) { ?>
 
 											<a class="btn btn-rosado btn-sm" href="<?php echo $this->route; ?>/?padre=<?= $id ?>&tipo=2" data-bs-toggle="tooltip" data-placement="top" title="Agregar"><i class="fas fa-plus"></i></a>
+										<?php } ?>
+										<?php if ($content->tipo == 4) { ?>
+
+											<a class="btn btn-morado btn-sm" href="/administracion/imagenes?album=<?= $id ?>" data-bs-toggle="tooltip" data-placement="top" title="Agregar imágenes"><i class="fas fa-images"></i></a>
 										<?php } ?>
 
 									<?php } ?>

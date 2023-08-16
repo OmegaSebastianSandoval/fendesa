@@ -240,6 +240,8 @@ class Administracion_imagenesController extends Administracion_mainController
 		$data['imagen_fecha'] = $this->_getSanitizedParam("imagen_fecha");
 		$data['imagen_estado'] = $this->_getSanitizedParam("imagen_estado");
 		$data['imagen_album'] = $this->_getSanitizedParamHtml("imagen_album");
+		$data['imagen_descripcion'] = $this->_getSanitizedParamHtml("imagen_descripcion");
+
 		return $data;
 	}
 	/**

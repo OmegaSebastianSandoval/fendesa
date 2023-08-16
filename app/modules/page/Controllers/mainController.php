@@ -15,6 +15,10 @@ class Page_mainController extends Controllers_Abstract
 		$this->template = new Page_Model_Template_Template($this->_view);
 
 		$infopageModel = new Page_Model_DbTable_Informacion();
+		$publicidadModel = new Page_Model_DbTable_Publicidad();
+		$this->_view->botoneslaterales = $publicidadModel->getList("publicidad_seccion = '103' AND publicidad_estado = 1", "");
+
+
 		$informacion = $infopageModel->getById(1);
 		$this->_view->infopage = $informacion;
 		$partialsModel = new Administracion_Model_DbTable_Partials();
